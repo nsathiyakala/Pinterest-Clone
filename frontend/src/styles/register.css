@@ -1,0 +1,45 @@
+.min-vh-100 {
+    min-height: 100vh;
+  }
+  
+  .max-w-400 {
+    max-width: 400px;
+  }
+  
+  .separator {
+    position: relative;
+    text-align: center;
+  }
+  
+  .separator span {
+    background: #fff;
+    padding: 0 10px;
+    position: relative;
+    top: -10px;
+  }
+  
+  .separator::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #ddd;
+    z-index: 1;
+  }
+  
+  .logo-img {
+    height: 50px;
+  }
+  
+  .common-input {
+    border: 1px solid #ced4da;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .common-btn {
+    padding: 10px;
+    font-weight: 500;
+  }
+  

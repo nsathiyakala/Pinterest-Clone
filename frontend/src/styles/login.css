@@ -1,0 +1,30 @@
+.login-container {
+    min-height: 100vh;
+    background-color: #f8f9fa; 
+  }
+  
+  .login-card {
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    border-radius: 8px;
+  }
+  
+  .logo-img {
+    height: 50px;
+  }
+  
+  .separator {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+    margin: 0 10px;
+  }
+  

@@ -1,0 +1,14 @@
+.container {
+    max-width: 1140px;
+  }
+  
+  .row {
+    margin: 0;
+  }
+  
+  .text-center {
+    color: #555;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  

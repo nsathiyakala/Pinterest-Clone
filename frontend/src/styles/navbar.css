@@ -1,0 +1,37 @@
+.logo-img {
+    height: 24px; 
+  }
+  
+  .account-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    font-size: 1.25rem;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+  }
+  
+  .nav-link:hover {
+    color: #343a40; 
+  }
+  
+
+  @media (max-width: 768px) {
+    .logo-img {
+      height: 20px; 
+    }
+  
+    .account-circle {
+      width: 32px;
+      height: 32px;
+      font-size: 1rem;
+    }
+  
+    .gap-3 {
+      gap: 1rem !important; 
+    }
+  }
+  

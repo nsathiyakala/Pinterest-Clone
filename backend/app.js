@@ -9,7 +9,10 @@ const cloudinary = require("cloudinary");
 
 dotenv.config({path:path.join(__dirname,"config","config.env")})
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin: "http://localhost:3000", // Set to your frontend URL
+  credentials: true, // Allow credentials (cookies)
+}));
 app.use(cookieParser());
 
 
