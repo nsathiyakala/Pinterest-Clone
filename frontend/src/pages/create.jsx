@@ -47,7 +47,7 @@ const Create = () => {
     <div className="container mt-5">
       <div className="row justify-content-center">
         {/* File Upload Section */}
-        <div className="col-md-5 col-lg-4">
+        <div className="col-md-5 col-lg-6">
           <div className="card shadow-lg p-4">
             {filePrev && (
               <img src={filePrev} alt="Preview" className="img-fluid mb-3 rounded" />
@@ -68,14 +68,14 @@ const Create = () => {
               </div>
               <p className="text-muted mt-2">Choose a file</p>
             </div>
-            <p className="text-muted small mt-3">
+            <p className="text-muted small mt-3 text-center">
               We recommend using high-quality .jpg files but less than 10MB.
             </p>
           </div>
         </div>
 
         {/* Form Section */}
-        <div className="col-md-7 col-lg-6">
+        <div className="col-md-7 col-lg-4">
           <div className="card shadow-lg p-4">
             <form onSubmit={addPinHandler}>
               <div className="mb-4">
@@ -89,6 +89,7 @@ const Create = () => {
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   required
+                  style={{width:"100%"}}
                 />
               </div>
               <div className="mb-4">
@@ -104,7 +105,7 @@ const Create = () => {
                   required
                 />
               </div>
-              <button type="submit" className="btn btn-primary w-100">
+              <button type="submit" className="btn btn-danger w-100">
                 Add +
               </button>
             </form>

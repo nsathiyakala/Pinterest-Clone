@@ -9,18 +9,20 @@ const Home = () => {
 
     return (
         <div>
-            {/* no Pins */}
+         
             {loading ? (
                 <Loading />
             ) : (
                 <div className="container py-4">
                     <div className="row justify-content-center">
                         {pins && pins.length > 0 ? (
-                            pins.map((e, i) => (
-                                <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" key={i}>
-                                    <PinCard pin={e} />
-                                </div>
-                            ))
+                            <div className="masonry-grid">
+                                {pins.map((e, i) => (
+                                    <div className="masonry-item" key={i}>
+                                        <PinCard pin={e} />
+                                    </div>
+                                ))}
+                            </div>
                         ) : (
                             <p className="text-center">No Pins Yet</p>
                         )}
