@@ -16,8 +16,7 @@ export const UserProvider = ({ children }) => {
   const [btnLoading, setBtnLoading] = useState(false);
 
 
-  async function registerUser(name, email, password, navigate, 
-    // fetchPins
+  async function registerUser(name, email, password, navigate, fetchPins
   ) {
     setBtnLoading(true);
     try {
@@ -32,15 +31,14 @@ export const UserProvider = ({ children }) => {
       setIsAuth(true);
       setBtnLoading(false);
       navigate("/");
-      // fetchPins();
+      fetchPins();
     } catch (error) {
       toast.error(error.response.data.message);
       setBtnLoading(false);
     }
   }
 
-  async function loginUser(email, password, navigate,
-    // fetchPins
+  async function loginUser(email, password, navigate,fetchPins
   ) {
     setBtnLoading(true);
     try {
@@ -73,6 +71,18 @@ export const UserProvider = ({ children }) => {
     }
   }
 
+  async function followUser(id, fetchUser) {
+    try {
+      const { data } = await axios.post(process.env.REACT_APP_API_URL +"/follow/" + id);
+
+      toast.success(data.message);
+      fetchUser();
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
+  }
+
+
 
   useEffect(() => {
     fetchUser();
@@ -89,7 +99,7 @@ export const UserProvider = ({ children }) => {
         registerUser,
         setIsAuth,
         setUser,
-        // followUser,
+        followUser,
       }}
     >
       {children}

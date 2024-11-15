@@ -1,16 +1,16 @@
 import React from "react";
-// import { PinData } from "../context/pinContext";
-// import { Loading } from "../components/loading";
-// import PinCard from "../components/PinCard";
+import { PinData } from "../context/pinContext";
+import { Loading } from "../components/loading";
+import PinCard from "../components/PinCard";
 import "../styles/home.css";
 
 const Home = () => {
-    // const { pins, loading } = PinData();
+    const { pins, loading } = PinData();
 
     return (
         <div>
-            no Pins
-            {/* {loading ? (
+            {/* no Pins */}
+            {loading ? (
                 <Loading />
             ) : (
                 <div className="container py-4">
@@ -26,7 +26,7 @@ const Home = () => {
                         )}
                     </div>
                 </div>
-            )} */}
+            )}
         </div>
     );
 };

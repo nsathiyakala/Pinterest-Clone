@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserData } from "../context/userContext";
 import { LoadingAnimation } from "../components/loading";
-// import { PinData } from "../context/PinContext";
+import { PinData } from "../context/pinContext";
 import "../styles/register.css";
 
 const Register = () => {
@@ -13,13 +13,11 @@ const Register = () => {
   const { registerUser, btnLoading } = UserData();
   const navigate = useNavigate();
 
-//   const { fetchPins } = PinData();
+  const { fetchPins } = PinData();
 
   const submitHandler = (e) => {
     e.preventDefault();
-    registerUser(name, email, password, navigate, 
-        // fetchPins
-    );
+    registerUser(name, email, password, navigate, fetchPins );
   };
 
   return (

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserData } from "../context/userContext";
 import { LoadingAnimation } from "../components/loading";
-// import { PinData } from "../context/PinContext";
+import { PinData } from "../context/pinContext";
 import "../styles/login.css"
 
 const Login = () => {
@@ -12,13 +12,11 @@ const Login = () => {
   const { loginUser, btnLoading } = UserData();
   const navigate = useNavigate();
 
-//   const { fetchPins } = PinData();
+  const { fetchPins } = PinData();
 
   const submitHandler = (e) => {
     e.preventDefault();
-    loginUser(email, password, navigate, 
-        // fetchPins
-    );
+    loginUser(email, password, navigate,fetchPins );
   };
 
   return (

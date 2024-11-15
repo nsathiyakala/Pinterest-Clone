@@ -1,0 +1,39 @@
+.comments-container {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.comments-container .rounded-circle {
+  width: 40px;
+  height: 40px;
+}
+
+.comments-container .btn {
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.card .rounded-t-lg {
+  border-radius: 0.5rem;
+}
+
+.card .rounded-md-start {
+  border-top-left-radius: 0.5rem;
+}
+
+.card .rounded-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .bg-secondary {
+  background-color: #f5f5f5;
+}
+
+.card .form-control {
+  max-width: 300px;
+}

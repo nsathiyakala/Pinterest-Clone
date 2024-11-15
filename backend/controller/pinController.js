@@ -145,3 +145,30 @@ exports.updatePin = TryCatch(async (req, res) => {
         message: "Pin updated",
     });
 });
+
+exports.likePin = TryCatch(async (req, res) => {
+    const pin = await Pin.findById(req.params.id);
+
+    if (!pin)
+        return res.status(400).json({
+            message: "No Pin with this id",
+        });
+
+    // Check if the user has already liked the pin
+    const alreadyLiked = pin.likes.includes(req.user._id);
+
+    if (alreadyLiked) {
+        // Unlike the pin
+        pin.likes = pin.likes.filter(userId => userId.toString() !== req.user._id.toString());
+    } else {
+        // Like the pin
+        pin.likes.push(req.user._id);
+    }
+
+    await pin.save();
+
+    res.json({
+        message: alreadyLiked ? "Pin Unliked" : "Pin Liked",
+        likes: pin.likes.length, // Return the updated number of likes
+    });
+});

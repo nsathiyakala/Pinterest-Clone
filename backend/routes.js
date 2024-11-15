@@ -4,7 +4,7 @@ const router=express.Router()
 const { registerUser,loginUser,myProfile, userProfile, followAndUnfollowUser, logOutUser} = require("./controller/userController")
 const {isAuth} = require("./middleware/isAuth")
 const uploadFile = require("./middleware/multer");
-const { createPin, getAllPins, getSinglePin, commentOnPin, deleteComment, updatePin, deletePin } = require("./controller/pinController");
+const { createPin, getAllPins, getSinglePin, commentOnPin, deleteComment, updatePin, deletePin,likePin } = require("./controller/pinController");
 
 // user router
 router.post("/register", registerUser);
